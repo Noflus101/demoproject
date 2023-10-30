@@ -1,0 +1,417 @@
+My Drive
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script>
+
+            var id = 1;
+          
+            $(document).ready(function(){
+               $("#tambah").click(function(){
+                var title = $("#judul").val()
+                var text = $("#isi").val();
+                
+                console.log(`judul : ${title} dan isi : ${text}`)
+                var mynote=`
+                        <div class="col-8 col-md-3 m-1 rounded border border-1 note" id="delete">
+                            <div class="d-flex justify-content-end mt-3">
+                            <button type="button" class="btn-close" id="tutup"></button>
+                            </div>
+                            <h4 class="fw-bold">${title}</h4>
+                            <p class="text-dark">${text}</p>
+                            `;
+                $("#target").append(mynote);
+                            $("#judul").val("")
+                            $("#isi").val("")
+                        })
+
+                        
+    
+                        $("#target").on("click", "#tutup", function() {
+        $(this).closest(".col-8").remove(); // Menghapus catatan yang mengandung tombol "tutup" yang ditekan
+    })
+                var index = 0;
+                var picture = ["/Assets/kaehot3.jpg","/Assets/kaehot2.jpg","/Assets/kaehot.jpg"];
+                $("#ubah").click(function(){
+                    
+                    index = index + 1;
+                    if (index == picture.length){
+                        index = 0;
+                    }
+                    $("#foto").attr("src", picture[index])
+                })
+               
+                 })
+    
+        </script>
+    
+   
+    <title>Nice Web</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-3">
+        <div class="container-xxl ">
+            <a href="#intro" class="navbar-brands">
+               
+                <span class="fw-bold text-white">
+                     <i class="bi bi-wallet-fill"></i>
+                    Waifu'SS+
+
+                </span>
+            </a>
+            <!-- toggle button for mobile nav -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- navbar link -->
+            <div class="collapse navbar-collapse justify-content-end align-item-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a href="#topics" class="nav-link">About the book</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#review" class="nav-link">Review</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="navbar-item d-md-none">
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="navbar-item ">
+                        <a href="#pricing" class="btn btn-success">Buy Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </nav>
+    <!-- Main image & intro text -->
+    <section id="intro">
+        <div class="container-lg">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5 text-center text-md-start"> 
+                <h1>
+                    <div class="diplay-1">Waifu Book</div>
+                    <div class="display-5 text-muted">Your Waifu Materials</div>
+        
+                </h1>
+                <p class="lead my-4 text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem dolor id similique accusamus laudantium odit alias voluptatum nostrum maiores itaque. Beatae perspiciatis iusto architecto necessitatibus asperiores et similique! Harum, beatae?</p>
+                <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+            </div>
+            <div class="col-md-5 text-center d-none d-md-block">
+                <img class = "img-fluid"src="/Assets/kaehot.jpg" alt="Kaelas book">
+            </div>
+        
+        
+        </div>
+        
+        </div>
+        
+            </section>    
+            
+            <!-- Pricing plans -->
+            <section id = "pricing " class="bg-light mt-5 pt-3">
+                <div class="container-lg">
+                    <div class="text-center">
+                        <h2>Pricing</h2>
+                        <p class="lead text-muted">Choose your own Waifu</p>
+                    </div>
+                    <div class="row my-4 align-items-center justify-content-center">
+                        <div class="col-8 col-lg-4 col-xl-3">
+                            <div class="card border-0 mb-2">
+                                <div class="card-body text-center py-4">
+                                    <h4 class="card-title"> Smoll Edition</h4>
+                                    <p class="card-subtitle">Flat is justice</p>
+                                    <p class="display-5 my-5 text-primary fw-bolder">3.99$</p>
+                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                        It Specialize for the one who likes a flat booba. Once said flat chests are delicious
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary btn-lg">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9 col-lg-4">
+                            <div class="card border-2 mb-2">
+                                <div class="card-header text-center text-primary">The Normie Picks</div>
+                                <div class="card-body text-center py-4">
+                                    <h4 class="card-title"> Medium Edition</h4>
+                                    <p class="card-subtitle">Medium is premium</p>
+                                    <p class="display-5 my-5 text-primary fw-bolder">6.99$</p>
+                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                        This one likes the normal one. But doubt their nomalities.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary btn-lg">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10 col-lg-5">
+                            <div class="card border-0 mb-2">
+                                
+                                <div class="card-body text-center py-4">
+                                    <h4 class="card-title"> Big Edition</h4>
+                                    <p class="card-subtitle">Oppai is Truth</p>
+                                    <p class="display-5 my-5 text-primary fw-bolder">20.99$</p>
+                                    <p class="card-text mx-5 text-muted d-none d-lg-block">
+                                       If you want to dive deep and likes no-mainstream things. This might suit your taste in size.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary btn-lg">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="topics">
+                <div class="container-md">
+                    <div class="text-center">
+                        <h2>Inside the Book</h2>
+                        <p class="lead text-muted">
+                            a quick seeing things in the book
+                        </p>
+                    </div>
+                    <div class="row my-5 g-5 justify-content-around align-items-center">
+                        <!-- accordion -->
+                        <div class="col-6 col-lg-4">
+                            <img src="/Assets/kaehot3.jpg" alt="" class="img-fluid" id = "foto">
+                        </div>
+                        <div class="col-6 col-lg-4">
+                           <button type="button" class="btn btn-outline-dark" id = "ubah">See Picture</button>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item ">
+                              <h2 class="accordion-header ">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#One" aria-expanded="true" aria-controls="collapseOne">
+                                  Smoll Book
+                                </button>
+                              </h2>
+                              <div id="One" class="accordion-collapse collapse show bg-light" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  you will die. because justice said you are horny with lolis. therefore you are served justice
+                                </div>
+                              </div>
+                            <div class="accordion-item ">
+                              <h2 class="accordion-header ">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#Two" aria-expanded="true" aria-controls="collapseOne">
+                                  Normie Book
+                                </button>
+                              </h2>
+                              <div id="Two" class="accordion-collapse collapse bg-light" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  you will die. because justice said you are horny with lolis. therefore you are served justice
+                                </div>
+                              </div>
+                            <div class="accordion-item ">
+                              <h2 class="accordion-header ">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#Three" aria-expanded="true" aria-controls="collapseOne">
+                                  Oppai Book
+                                </button>
+                              </h2>
+                              <div id="Three" class="accordion-collapse collapse bg-light" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  you will die. because justice said you are horny with lolis. therefore you are served justice
+                                </div>
+                              </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id ="reviews" class="bg-light">
+                <div class="container-lg text-start text-lg-center">
+                    <h2>Book Review <i class="bi bi-star-fill"></i></h2>
+
+                    <p class="lead">What weebs has to Say </p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="list-group">
+                            <div class="list-group-item py-3">
+                                <div class="pb-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <h5 class="mb-2">This Makes Me Horny</h5>
+                                <p class="mb-1">Dont ask whay</p>
+                                <small class="text-muted">Reviewed by some Weebs</small>
+                            </div>
+                            <div class="list-group-item py-3">
+                                <div class="pb-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <h5 class="mb-2">This Makes Me Wanna marry someone</h5>
+                                <p class="mb-1">Dont ask whay</p>
+                                <small class="text-muted">Reviewed by some Weebs</small>
+                            </div>
+                            <div class="list-group-item py-3">
+                                <div class="pb-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <h5 class="mb-2">This Makes Me Want to buy Dakimakura</h5>
+                                <p class="mb-1">Dont ask whay</p>
+                                <small class="text-muted">Reviewed by some Weebs</small>
+                            </div>
+                            <div class="list-group-item py-3">
+                                <div class="pb-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <h5 class="mb-2">This Makes Me Gay</h5>
+                                <p class="mb-1">Dont ask whay</p>
+                                <small class="text-muted">Reviewed by some Weebs</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="mt-3">
+                <div class="container-lg">
+                    <div class="text-center">
+                        <h2>Get In Touch</h2>
+                        <p class="lead">Wanna Get your Waifu?</p>
+                    </div>
+                    <div class="row justify-content-center my-5">
+
+                        <div class="col-lg-6">
+                            <form >
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class= "form-control" name="" id="email" placeholder="boo123@gmail.com">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Googa Giiga">
+                                <label for="subject" class="form-label">Whats your question about</label>
+                                <select name="" id="subject" class="form-select">
+                                <option value="pricing" selected>Pricing</option>
+                                <option value="content">Content</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="area">Your Questione</label>
+                            <textarea name="" id="area" cols="30" rows="10" class="form-control mb-3" placeholder="This books makes me ungodly horny"></textarea>
+                               <label for="age">Your age</label>
+                            
+                            <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-brilliance"></i></span>
+                                    <input type="text" class="form-control" id="age">
+                                </div>
+                        
+                        
+                        </form>
+                            <div class="mt-4 text-center">
+                                <button type="submit" class="btn btn-outline-secondary btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- add some notes -->
+            <section id="note">
+                <div class="container-lg">
+                    <div class="text-center">
+                        <h2 class="mb-3">Notes</h2>
+                        <button type="button" class="btn btn-outline-success btn-lg mb-4"data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <span class="fw-bolder">+</span><span class="fw-bold">Add Notes</span></button>
+                    </div> 
+                    <div class="row justify-content-center align-items-center" id="target">
+                       
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header bg-success">
+                        <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">Add Note</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                            <div class="row g-3 align-items-center">
+                                <div class="col-auto">
+                                  <label for="judul" class="col-form-label">Title</label>
+                                </div>
+                                <div class="col-auto">
+                                  <input type="text" id="judul" class="form-control" placeholder="your Title">
+                                </div>
+                            <label for="isi" class="form-label" class="form-control">Isi Note</label>
+                            <textarea name="" id="isi" cols="30" rows="5" placeholder="some note" class="form-control"></textarea>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="tambah">+Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal2 -->
+                <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="detailModalLabel">Detail Catatan</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h4 class="fw-bold" id="detail-judul"></h4>
+                                <p class="text-dark" id="detail-isi"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="detailModalLabel">Detail Catatan</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h4 class="fw-bold" id="detail-judul"></h4>
+                                <p class="text-dark" id="detail-isi"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                
+                
+                
+                
+
+                </div>
+            </section>
+
+
+    
+       
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
